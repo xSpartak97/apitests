@@ -6,6 +6,7 @@ import pdb
 import random
 
 
+@allure.feature('Get bookings')
 @pytest.mark.tcid1
 def test_get_booking():
     logger.info("TEST: Returns the ids of all the bookings that exist within the API.")
@@ -19,6 +20,7 @@ def test_get_booking():
     assert rs_api
 
 
+@allure.feature('Get bookings')
 @pytest.mark.tcid2
 def test_get_booking_by_id():
     logger.info("TEST: Returns a specific booking based upon the booking id provided")
