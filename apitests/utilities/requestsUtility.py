@@ -19,8 +19,9 @@ class RequestsUtility(object):
 
     def get(self, endpoint, payload=None, headers=None, expected_status_code=200):
         if not headers:
-            headers = {"Content-Type": "application/json",
-                       "Connection": "keep-alive"}
+            headers = {
+                       "Connection": "keep-alive"
+            }
 
         self.url = self.base_url + endpoint
         rs_api = requests.get(url=self.url, data=json.dumps(payload), headers=headers)
