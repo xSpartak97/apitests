@@ -40,7 +40,7 @@ def test_update_booking(post_token):
         "additionalneeds": "Breakfast"
     }
 
-    # call apo to get random booking id
+    # call api to get random booking id
     rs_api = req_helper.get(endpoint='booking')
     booking_id = random.choice(rs_api)['bookingid']
 
