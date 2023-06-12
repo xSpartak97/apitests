@@ -8,14 +8,6 @@ from faker import Faker
 import random
 
 
-@pytest.fixture()
-def post_token():
-    req_helper = RequestsUtility()
-    token = req_helper.post(endpoint='auth', payload={"username": "admin",
-                                                      "password": "password123"})
-    return token
-
-
 @allure.feature('Update Bookings')
 @pytest.mark.tcid5
 def test_update_booking(post_token):
