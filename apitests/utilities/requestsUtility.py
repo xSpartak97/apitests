@@ -60,10 +60,12 @@ class RequestsUtility(object):
         rs_api = requests.put(url=self.url, data=json.dumps(payload), headers=headers)
         self.status_code = rs_api.status_code
         self.expected_status_code = expected_status_code
-        self.rs_json = rs_api.json()
+        self.rs_json = rs_api.text
         self.assert_status_code()
 
         logger.debug(f"PUT API response: {self.rs_json}")
+
+        return rs_api.json()
 
     def patch(self, endpoint, payload=None, headers=None, expected_status_code=200):
         if not headers:

@@ -2,8 +2,6 @@ from apitests.utilities.requestsUtility import RequestsUtility
 import logging as logger
 import allure
 import pytest
-import pdb
-from json import JSONDecodeError
 
 
 @allure.feature('Post bookings')
@@ -55,5 +53,6 @@ def test_invalid_create_booking():
     }
 
     # call api
-    rs_api = req_helper.post(endpoint='booking', payload=payload)
+    rs_api = req_helper.post(endpoint='booking', payload=payload, expected_status_code=500)
 
+    assert rs_api
