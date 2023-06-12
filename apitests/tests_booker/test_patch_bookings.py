@@ -27,7 +27,7 @@ def test_patch_booking():
     rs_api = req_helper.get(endpoint='booking')
     booking_id = random.choice(rs_api)['bookingid']
 
-    # call api to update booking by id
+    # call api to partially update booking by id
     rs_api2 = req_helper.patch(endpoint=f'booking/{booking_id}',
                              payload=payload,
                              headers={'Content-Type': "application/json",
